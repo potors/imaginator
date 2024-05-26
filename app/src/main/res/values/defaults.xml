@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="brightness">100</integer>
+    <integer name="brightness_min">50</integer>
+    <integer name="brightness_max">150</integer>
+    <integer name="brightness_step">1</integer>
+
+    <integer name="contrast">0</integer>
+    <integer name="contrast_min">-50</integer>
+    <integer name="contrast_max">50</integer>
+    <integer name="contrast_step">1</integer>
+
+    <integer name="temperature">0</integer>
+    <integer name="temperature_min">-30</integer>
+    <integer name="temperature_max">30</integer>
+    <integer name="temperature_step">1</integer>
+
+    <integer name="hue">0</integer>
+    <integer name="hue_min">0</integer>
+    <integer name="hue_max">360</integer>
+    <integer name="hue_step">1</integer>
+</resources>
