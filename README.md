@@ -1,14 +1,10 @@
 # Imaginator (Image Editor)
 
-You can edit:
-
+Features:
 - Brightness
 - Contrast
 - Temperature
 - Hue
-
-Features:
-
 - Full Material You
 - Android 12+
 
