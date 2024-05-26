@@ -15,13 +15,27 @@ android {
         versionName = "1.0"
     }
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            signingConfig = signingConfigs.create("release") {
+            storeFile = file("keystore.jks")
+                storePassword = System.getenv("APK_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("APK_KEY_ALIAS")
+                keyPassword = System.getenv("APK_KEY_PASSWORD")
+
+                val localKeystore = file(System.getProperty("user.home") + "/.android/imaginator.jks")
+                if (localKeystore.exists() && localKeystore.isFile) {
+                    storeFile = localKeystore
+                }
+            }
         }
     }
 
