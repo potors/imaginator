@@ -26,10 +26,10 @@ android {
             )
 
             signingConfig = signingConfigs.create("release") {
-            storeFile = file("keystore.jks")
+                storeFile = file("keystore.jks")
                 storePassword = System.getenv("APK_KEYSTORE_PASSWORD")
-                keyAlias = System.getenv("APK_KEY_ALIAS")
-                keyPassword = System.getenv("APK_KEY_PASSWORD")
+                keyAlias = System.getenv("APK_ALIAS")
+                keyPassword = System.getenv("APK_ALIAS_PASSWORD")
 
                 val localKeystore = file(System.getProperty("user.home") + "/.android/imaginator.jks")
                 if (localKeystore.exists() && localKeystore.isFile) {
