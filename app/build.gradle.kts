@@ -12,7 +12,7 @@ android {
         minSdk = 31
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
     }
 
 
@@ -26,7 +26,6 @@ android {
             )
 
             signingConfig = signingConfigs.create("release") {
-                storeFile = file("keystore.jks")
                 storePassword = System.getenv("APK_KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("APK_ALIAS")
                 keyPassword = System.getenv("APK_ALIAS_PASSWORD")
@@ -34,6 +33,8 @@ android {
                 val localKeystore = file(System.getProperty("user.home") + "/.android/imaginator.jks")
                 if (localKeystore.exists() && localKeystore.isFile) {
                     storeFile = localKeystore
+                } else {
+                    storeFile = file(System.getProperty("user.home") + "/work/_temp/keystore.jks")
                 }
             }
         }
